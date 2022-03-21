@@ -20,13 +20,14 @@ public class NovaEmpresaServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 * se colocar metodo doPost ou doGet ele só irá atender umadas duas formas enquanto service atende os dois.
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nome");
 		Empresa empresa = new Empresa();
 		empresa.setNome(nomeEmpresa);
 		
+		//Simulação de um banco dee dados
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
