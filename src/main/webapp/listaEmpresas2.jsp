@@ -3,8 +3,6 @@
 
 <%@ page import="java.util.List, br.com.gerenciador.servlet.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!-- Importando a biblioteca -->
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -16,8 +14,7 @@
 	Lista cde Empresas:
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			
-			<li>${empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </li>
+			<li>${empresa.nome }</li>
 		</c:forEach>
 	</ul>
 </body>
