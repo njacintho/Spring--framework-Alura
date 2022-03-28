@@ -40,6 +40,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		
 		Empresa empresa = new Empresa();
+		
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 		
@@ -51,11 +52,14 @@ public class NovaEmpresaServlet extends HttpServlet {
 //		PrintWriter out = response.getWriter();
 //		out.println("<html><body>Empresa  " + nomeEmpresa + " cadastrada com sucesso!<body><html>");
 		
-		
-		// Chamar JSP --> parte html
-		RequestDispatcher reqdisp = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
 		request.setAttribute("empresa", empresa.getNome());
-		reqdisp.forward(request, response);
+		//Redireciona para o Cliente site 
+		response.sendRedirect("listaEmpresa");
+		
+//		// Chamar JSP --> parte html com o Dispatcher
+//		RequestDispatcher reqdisp = request.getRequestDispatcher("/listaEmpresa");
+//		request.setAttribute("empresa", empresa.getNome());
+//		reqdisp.forward(request, response);
 		
 	}
 	
