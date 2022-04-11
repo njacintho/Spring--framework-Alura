@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.gerenciador.servlet.Banco;
+import br.com.gerenciador.modelo.Banco;
+import br.com.gerenciador.modelo.Empresa;
+
 
 /**
  * Servlet implementation class MostraEmpresaServlet

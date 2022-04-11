@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%@ page import="java.util.List, br.com.gerenciador.servlet.Empresa"%>
+<%@ page import="java.util.List,br.com.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!-- Importando a biblioteca -->
 
 <!DOCTYPE html>

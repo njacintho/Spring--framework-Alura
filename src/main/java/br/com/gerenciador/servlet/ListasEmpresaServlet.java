@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.gerenciador.modelo.Banco;
+import br.com.gerenciador.modelo.Empresa;
+
 
 @WebServlet(name = "ListaEmpresaServlet", urlPatterns = { "/listaEmpresa" })
 public class ListasEmpresaServlet extends HttpServlet {

@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
+import br.com.gerenciador.modelo.Banco;
+import br.com.gerenciador.modelo.Empresa;
+
 
 @WebServlet("/alterarEmpresa")
 public class AlterarEmpresaServlet extends HttpServlet {
@@ -41,6 +46,7 @@ public class AlterarEmpresaServlet extends HttpServlet {
 		empresa.setDataAbertura(dataAbertura);
 		
 		response.sendRedirect("listaEmpresa");
+		
 	}
 
 }
