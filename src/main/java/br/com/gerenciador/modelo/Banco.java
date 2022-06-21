@@ -22,7 +22,7 @@ public class Banco {
 	 }
 	
 	 public void adiciona(Empresa empresa) {
-		 empresa.setId(Banco.chavesequencial);
+		 empresa.setId(Banco.chavesequencial++);
 		Banco.lista.add(empresa);
 
 	}

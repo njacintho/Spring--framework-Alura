@@ -1,4 +1,4 @@
-package br.com.gerenciador.servlet;
+package br.com.gerenciador.acao;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,29 +6,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import br.com.gerenciador.modelo.Banco;
 import br.com.gerenciador.modelo.Empresa;
 
+public class NovaEmpresa {
 
-@WebServlet("/alterarEmpresa")
-public class AlterarEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ALterando empresa");
+System.out.println("Cadastrando nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nome");
 		String dataAberEmpresa = request.getParameter("data");
-		String paramid = request.getParameter("id");
-		Integer id = Integer.valueOf(paramid);
 		
 		Date dataAbertura = null;
 		try {
@@ -38,15 +29,28 @@ public class AlterarEmpresaServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		System.out.println(id);
 		
-		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaId(id);
+		Empresa empresa = new Empresa();
+		
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 		
-		response.sendRedirect("listaEmpresa");
+		
+		//Simulação de um banco dee dados
+		Banco banco = new Banco();
+		banco.adiciona(empresa);
+		
+		
+		request.setAttribute("empresa", empresa.getNome());
+		
+		return "redirect:entrada?acao=ListaEmpresas";
+		
+		//Redireciona para o Cliente site 
+//		response.sendRedirect("entrada?acao=ListaEmpresas");
+		
+		//Obs: necessario mudoficar o form --> formNovaEmpresa.jsp
+		//e apontar para essa classe 
 		
 	}
-
+	
 }
