@@ -1,4 +1,4 @@
-package br.com.gerenciador.acao;
+package br.com.gerenciador.controller;
 
 import java.io.IOException;
 
@@ -8,25 +8,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.gerenciador.modelo.Banco;
 
-public class RemoveEmpresa {
-	
-	
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+public class RemoveEmpresa implements Acao {
+
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		System.out.println("Removendo empresas");
 
-		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
-		
+
 		System.out.println(id);
 
 		Banco banco = new Banco();
 		banco.removerEmpresas(id);
-		
+
 		return "redirect:entrada?acao=ListaEmpresas";
-		
-		
+
 //		response.sendRedirect("entrada?acao=ListaEmpresas");
 	}
 
