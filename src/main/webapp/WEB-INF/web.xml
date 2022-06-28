@@ -13,4 +13,42 @@
   	<url-pattern>/ola</url-pattern>
   </servlet-mapping>
   
+     <!--Filtro do monitoramento tempoo de execucao  -->
+  
+  <filter>
+    <filter-name>Monitoramento-Filter</filter-name>
+    <filter-class>br.com.gerenciador.servlet.MonitoramentoFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>Monitoramento-Filter</filter-name>
+    <url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  
+  <!--Filtro do autorizador login  -->
+  
+  <filter>
+    <filter-name>Autorizacao-Filter</filter-name>
+    <filter-class>br.com.gerenciador.servlet.AutorizacaoFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>Autorizacao-Filter</filter-name>
+    <url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+
+  
+  
+    <!--Filtro do controller, que controala as requisições  -->
+  
+  <filter>
+    <filter-name>Controlador-Filter</filter-name>
+    <filter-class>br.com.gerenciador.servlet.ControllerFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>Controlador-Filter</filter-name>
+    <url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  
 </web-app>
