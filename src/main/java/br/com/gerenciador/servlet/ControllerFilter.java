@@ -22,9 +22,14 @@ import br.com.gerenciador.controller.Acao;
 //@WebFilter("/entrada")
 public class ControllerFilter extends HttpFilter implements Filter {
        
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
+
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {}
+	
+	@Override
+	public void destroy() {}
+	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 	
 		System.out.println("Controlador filter");

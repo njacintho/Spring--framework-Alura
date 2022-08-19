@@ -15,6 +15,13 @@ import javax.servlet.http.HttpFilter;
  */
 //@WebFilter("/entrada")
 public class MonitoramentoFilter implements Filter {
+	
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {}
+	
+	@Override
+	public void destroy() {}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
